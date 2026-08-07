@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "videos",
+  "info": {
+    "singularName": "video",
+    "pluralName": "videos",
+    "displayName": "Video"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "descripcion": {
+      "type": "text"
+    },
+    "youtube_url": {
+      "type": "string",
+      "required": true
+    },
+    "categoria": {
+      "type": "enumeration",
+      "enum": [
+        "Review",
+        "Aventura",
+        "Circuito",
+        "Equipamiento",
+        "Taller",
+        "Rutas",
+        "Off-Road",
+        "Técnica",
+        "Comparativas",
+        "Eventos",
+        "MUSICA"
+      ],
+      "required": true,
+      "default": "Aventura"
+    }
+  }
+}

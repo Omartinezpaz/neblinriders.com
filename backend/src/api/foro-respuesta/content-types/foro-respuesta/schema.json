@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "foro_respuestas",
+  "info": {
+    "singularName": "foro-respuesta",
+    "pluralName": "foro-respuestas",
+    "displayName": "ForoRespuesta",
+    "description": "Respuestas a temas del ForoBiker"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "contenido": {
+      "type": "richtext",
+      "required": true
+    },
+    "autor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "tema": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::foro-tema.foro-tema",
+      "inversedBy": "respuestas"
+    }
+  }
+}

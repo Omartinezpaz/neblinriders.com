@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "publicidads",
+  "info": {
+    "singularName": "publicidad",
+    "pluralName": "publicidads",
+    "displayName": "Publicidad",
+    "description": "Banners publicitarios rotativos por fecha y ubicación"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombreEmpresa": {
+      "type": "string",
+      "required": true
+    },
+    "urlEnlace": {
+      "type": "string"
+    },
+    "ubicacion": {
+      "type": "enumeration",
+      "enum": [
+        "hero_slider",
+        "home_principal",
+        "home_secundaria",
+        "sidebar",
+        "footer"
+      ],
+      "default": "home_principal",
+      "required": true
+    },
+    "fechaInicio": {
+      "type": "date",
+      "required": true
+    },
+    "fechaFin": {
+      "type": "date",
+      "required": true
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

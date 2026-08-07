@@ -1,0 +1,432 @@
+/* ============================================================
+   FOROBIKER — Estética Dark Elite
+   ============================================================ */
+
+.foro-page {
+  padding: 2rem 1.5rem 3rem;
+  max-width: 900px;
+  margin: 0 auto;
+  min-height: 80vh;
+}
+
+.foro-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.foro-header h1 {
+  font-size: 2.8rem;
+  color: var(--nr-texto-principal);
+  margin-bottom: 0.5rem;
+}
+
+.foro-header p {
+  color: var(--nr-texto-secundario);
+  font-size: 1.05rem;
+}
+
+/* --- Barra de controles (filtro + botón nuevo tema) --- */
+.foro-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.foro-categorias {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.foro-cat-btn {
+  padding: 0.45rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  background: transparent;
+  color: var(--nr-texto-secundario);
+  font-family: var(--nr-font-cuerpo);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.foro-cat-btn:hover {
+  border-color: var(--nr-ambar-primario);
+  color: var(--nr-ambar-primario);
+}
+
+.foro-cat-btn.active {
+  background: var(--nr-ambar-primario);
+  color: var(--nr-fondo-principal);
+  border-color: var(--nr-ambar-primario);
+  font-weight: 600;
+}
+
+.foro-nuevo-btn {
+  padding: 0.6rem 1.5rem;
+  background: var(--nr-ambar-primario);
+  color: var(--nr-fondo-principal);
+  border: none;
+  border-radius: 6px;
+  font-family: var(--nr-font-titulos);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.foro-nuevo-btn:hover {
+  background: var(--nr-ambar-secundario);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(245, 165, 36, 0.35);
+}
+
+/* --- Lista de temas --- */
+.foro-temas-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.foro-tema-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--nr-fondo-secundario);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.foro-tema-card:hover {
+  border-color: var(--nr-ambar-primario);
+  transform: translateX(4px);
+  box-shadow: -4px 0 0 var(--nr-ambar-primario);
+}
+
+.foro-tema-card.fijado {
+  border-left: 3px solid var(--nr-ambar-primario);
+  background: rgba(245, 165, 36, 0.04);
+}
+
+.foro-tema-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--nr-fondo-principal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.foro-tema-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.foro-tema-avatar .initial {
+  color: var(--nr-ambar-primario);
+  font-family: var(--nr-font-titulos);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.foro-tema-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.foro-tema-titulo {
+  font-family: var(--nr-font-titulos);
+  font-size: 1.1rem;
+  color: var(--nr-texto-principal);
+  text-transform: none;
+  letter-spacing: 0;
+  margin-bottom: 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.foro-tema-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--nr-texto-secundario);
+}
+
+.foro-tema-cat-badge {
+  padding: 0.15rem 0.55rem;
+  border-radius: 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.foro-tema-cat-badge.cat-rutas_rodadas { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
+.foro-tema-cat-badge.cat-mecanica { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
+.foro-tema-cat-badge.cat-equipamiento { background: rgba(168, 85, 247, 0.15); color: #a855f7; }
+.foro-tema-cat-badge.cat-general { background: rgba(245, 165, 36, 0.15); color: var(--nr-ambar-primario); }
+.foro-tema-cat-badge.cat-emergencias { background: rgba(229, 72, 77, 0.15); color: var(--nr-alerta); }
+
+.foro-tema-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  flex-shrink: 0;
+  min-width: 60px;
+}
+
+.foro-tema-stats .count {
+  font-family: var(--nr-font-titulos);
+  font-size: 1.3rem;
+  color: var(--nr-ambar-primario);
+  font-weight: 700;
+}
+
+.foro-tema-stats .label {
+  font-size: 0.7rem;
+  color: var(--nr-texto-secundario);
+  text-transform: uppercase;
+}
+
+/* --- Paginación --- */
+.foro-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.foro-page-btn {
+  padding: 0.4rem 0.9rem;
+  background: var(--nr-fondo-secundario);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: var(--nr-texto-secundario);
+  font-family: var(--nr-font-cuerpo);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.foro-page-btn:hover:not(:disabled) {
+  border-color: var(--nr-ambar-primario);
+  color: var(--nr-ambar-primario);
+}
+
+.foro-page-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.foro-page-info {
+  color: var(--nr-texto-secundario);
+  font-size: 0.85rem;
+}
+
+/* --- Empty state --- */
+.foro-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--nr-texto-secundario);
+}
+
+.foro-empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+/* --- Modal Nuevo Tema --- */
+.foro-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: foro-fade-in 0.2s ease;
+}
+
+@keyframes foro-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.foro-modal {
+  background: var(--nr-fondo-secundario);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  width: 100%;
+  max-width: 620px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+.foro-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.foro-modal-header h2 {
+  font-size: 1.4rem;
+  color: var(--nr-texto-principal);
+}
+
+.foro-modal-close {
+  background: none;
+  border: none;
+  color: var(--nr-texto-secundario);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.foro-modal-close:hover {
+  color: var(--nr-alerta);
+}
+
+.foro-modal-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.foro-field label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--nr-texto-secundario);
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.foro-field input,
+.foro-field select,
+.foro-field textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: var(--nr-fondo-principal);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: var(--nr-texto-principal);
+  font-family: var(--nr-font-cuerpo);
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+}
+
+.foro-field input:focus,
+.foro-field select:focus,
+.foro-field textarea:focus {
+  outline: none;
+  border-color: var(--nr-ambar-primario);
+  box-shadow: 0 0 0 2px rgba(245, 165, 36, 0.15);
+}
+
+.foro-field textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.foro-field select {
+  cursor: pointer;
+}
+
+.foro-submit-btn {
+  width: 100%;
+  padding: 0.85rem;
+  background: var(--nr-ambar-primario);
+  color: var(--nr-fondo-principal);
+  border: none;
+  border-radius: 6px;
+  font-family: var(--nr-font-titulos);
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.foro-submit-btn:hover:not(:disabled) {
+  background: var(--nr-ambar-secundario);
+  box-shadow: 0 4px 15px rgba(245, 165, 36, 0.35);
+}
+
+.foro-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.foro-error {
+  color: var(--nr-alerta);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .foro-page { padding: 1.5rem 1rem; }
+  .foro-header h1 { font-size: 2rem; }
+  .foro-controls { flex-direction: column; align-items: stretch; }
+  .foro-categorias { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 0.5rem; }
+  .foro-tema-card { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .foro-tema-stats { flex-direction: row; gap: 0.5rem; }
+}
+
+/* --- Foro Stats & Meta Enhancements --- */
+.cat-count {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  font-weight: normal;
+}
+
+.autor-info {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.mod-badge {
+  background: var(--nr-ambar-primario);
+  color: var(--nr-fondo-principal);
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.actividad-info {
+  opacity: 0.6;
+  font-size: 0.75rem;
+}

@@ -1,0 +1,12 @@
+{
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "configurable": false
+    },
+    "apellido": {
+      "type": "string",
+      "configurable": false
+    }
+  }
+}

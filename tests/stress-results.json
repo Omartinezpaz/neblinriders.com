@@ -1,0 +1,91 @@
+{
+  "timestamp": "2026-08-05T01-51-20-667Z",
+  "config": {
+    "concurrency": 50,
+    "rounds": 5,
+    "delayBetweenRounds": 500
+  },
+  "results": [
+    {
+      "endpoint": "GET /articulos",
+      "totalRequests": 250,
+      "successCount": 245,
+      "errorCount": 5,
+      "errorRate": "2.0%",
+      "avgLatency": "5600.2ms",
+      "minLatency": "2636.2ms",
+      "maxLatency": "9951.4ms",
+      "p50": "5409.1ms",
+      "p95": "9229.4ms",
+      "p99": "9713.4ms",
+      "reqPerSec": "0.2",
+      "errors": [
+        "HTTP 500"
+      ]
+    },
+    {
+      "endpoint": "GET /miembros/activos",
+      "totalRequests": 250,
+      "successCount": 250,
+      "errorCount": 0,
+      "errorRate": "0.0%",
+      "avgLatency": "1043.4ms",
+      "minLatency": "532.3ms",
+      "maxLatency": "1808.5ms",
+      "p50": "1023.7ms",
+      "p95": "1562.6ms",
+      "p99": "1690.0ms",
+      "reqPerSec": "1.0",
+      "errors": []
+    },
+    {
+      "endpoint": "GET /publicidads",
+      "totalRequests": 250,
+      "successCount": 246,
+      "errorCount": 4,
+      "errorRate": "1.6%",
+      "avgLatency": "4045.9ms",
+      "minLatency": "2593.2ms",
+      "maxLatency": "5745.6ms",
+      "p50": "4022.3ms",
+      "p95": "5413.4ms",
+      "p99": "5727.4ms",
+      "reqPerSec": "0.2",
+      "errors": [
+        "HTTP 500"
+      ]
+    },
+    {
+      "endpoint": "GET /recursos",
+      "totalRequests": 250,
+      "successCount": 246,
+      "errorCount": 4,
+      "errorRate": "1.6%",
+      "avgLatency": "3151.9ms",
+      "minLatency": "1324.9ms",
+      "maxLatency": "4948.5ms",
+      "p50": "3092.0ms",
+      "p95": "4437.1ms",
+      "p99": "4940.9ms",
+      "reqPerSec": "0.3",
+      "errors": [
+        "HTTP 500"
+      ]
+    },
+    {
+      "endpoint": "GET /foro-temas",
+      "totalRequests": 250,
+      "successCount": 250,
+      "errorCount": 0,
+      "errorRate": "0.0%",
+      "avgLatency": "2888.0ms",
+      "minLatency": "1934.1ms",
+      "maxLatency": "4212.1ms",
+      "p50": "2875.4ms",
+      "p95": "3989.0ms",
+      "p99": "4211.3ms",
+      "reqPerSec": "0.3",
+      "errors": []
+    }
+  ]
+}

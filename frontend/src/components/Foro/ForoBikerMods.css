@@ -1,0 +1,30 @@
+
+/* --- Foro Stats & Meta Enhancements --- */
+.cat-count {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  font-weight: normal;
+}
+
+.autor-info {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.mod-badge {
+  background: var(--nr-ambar-primario);
+  color: var(--nr-fondo-principal);
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.actividad-info {
+  opacity: 0.6;
+  font-size: 0.75rem;
+}

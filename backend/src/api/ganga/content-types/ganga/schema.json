@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gangas",
+  "info": {
+    "singularName": "ganga",
+    "pluralName": "gangas",
+    "displayName": "GangaBiker",
+    "description": "Publicaciones de compra y venta"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true,
+      "maxLength": 100
+    },
+    "descripcion": {
+      "type": "text",
+      "required": true
+    },
+    "precio": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    },
+    "estado": {
+      "type": "enumeration",
+      "enum": [
+        "Nuevo",
+        "Usado - Excelente",
+        "Usado - Bueno",
+        "Repuestos",
+        "Vendido"
+      ],
+      "required": true,
+      "default": "Nuevo"
+    },
+    "categoria": {
+      "type": "enumeration",
+      "enum": [
+        "Moto",
+        "Casco",
+        "Indumentaria",
+        "Repuestos",
+        "Accesorios"
+      ],
+      "required": true,
+      "default": "Accesorios"
+    },
+    "ubicacion": {
+      "type": "string",
+      "required": true
+    },
+    "vendedor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "gangas"
+    },
+    "fotos": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

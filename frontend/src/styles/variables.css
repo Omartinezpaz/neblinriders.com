@@ -1,0 +1,163 @@
+/* frontend/src/styles/variables.css */
+:root {
+  /* Paleta Neblina RIDERS */
+  --nr-fondo-principal: #14161A;
+  --nr-fondo-secundario: #1F2229;
+  --nr-ambar-primario: #F5A524;
+  --nr-ambar-secundario: #C97A1C;
+  --nr-texto-principal: #F2F0EA;
+  --nr-texto-secundario: #9AA0A8;
+  --nr-alerta: #E5484D;
+
+  /* Tipografía (se cargan desde index.html) */
+  --nr-font-titulos: 'Oswald', sans-serif;
+  --nr-font-cuerpo: 'Inter', sans-serif;
+
+  /* Altura del header. Valor inicial estimado; se sobreescribe dinámicamente
+     por el hook useHeaderHeight.js con el valor real medido en vivo. */
+  --nr-header-height: 90px;
+}
+
+/* Reset básico y aplicación global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--nr-fondo-principal);
+  color: var(--nr-texto-principal);
+  font-family: var(--nr-font-cuerpo);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Patrón global: cualquier página de contenido usa esta clase
+   para no quedar tapada por el header fijo. El valor se mide
+   en vivo por useHeaderHeight.js y sobreescribe --nr-header-height. */
+.page-content {
+  padding-top: var(--nr-header-height);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--nr-font-titulos);
+  color: var(--nr-texto-principal);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Clase de utilidad para el overlay oscuro mencionado en el brief */
+.overlay-oscuro {
+  background: rgba(20, 22, 26, 0.6); /* 60% de oscuridad sobre imágenes */
+}
+
+/* ============================================================
+   LÍNEA RESPLANDECIENTE CON EFECTO ESTRELLA / REFLEJO
+   Uso: agregar clase .nr-glow-line a cualquier contenedor.
+   La línea aparece en el borde superior por defecto.
+   Variante: .nr-glow-line--bottom para borde inferior.
+   ============================================================ */
+.nr-glow-line {
+  position: relative;
+  overflow: hidden; /* Contener el reflejo dentro del componente */
+}
+
+/* La línea base: borde ámbar con resplandor (glow) */
+.nr-glow-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--nr-ambar-secundario) 15%,
+    var(--nr-ambar-primario) 50%,
+    var(--nr-ambar-secundario) 85%,
+    transparent 100%
+  );
+  box-shadow:
+    0 0 8px rgba(245, 165, 36, 0.4),
+    0 0 20px rgba(245, 165, 36, 0.2),
+    0 0 40px rgba(245, 165, 36, 0.1);
+  z-index: 10;
+}
+
+/* La estrella / reflejo que recorre la línea */
+.nr-glow-line::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -60px;
+  width: 60px;
+  height: 10px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(245, 165, 36, 0.7) 30%,
+    rgba(245, 165, 36, 0.3) 60%,
+    transparent 80%
+  );
+  border-radius: 50%;
+  filter: blur(1px);
+  z-index: 11;
+  animation: nr-star-sweep 4s ease-in-out infinite;
+}
+
+/* Variante: línea en el borde inferior */
+.nr-glow-line--bottom::before {
+  top: auto;
+  bottom: 0;
+}
+.nr-glow-line--bottom::after {
+  top: auto;
+  bottom: -4px;
+  animation: nr-star-sweep 4s ease-in-out 2s infinite;
+}
+
+/* Variante: línea roja (alerta / emergencias) */
+.nr-glow-line--red::before {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #b91c1c 15%,
+    var(--nr-alerta) 50%,
+    #b91c1c 85%,
+    transparent 100%
+  );
+  box-shadow:
+    0 0 8px rgba(229, 72, 77, 0.6),
+    0 0 20px rgba(229, 72, 77, 0.35),
+    0 0 40px rgba(229, 72, 77, 0.15);
+}
+
+.nr-glow-line--red::after {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(229, 72, 77, 0.8) 30%,
+    rgba(229, 72, 77, 0.3) 60%,
+    transparent 80%
+  );
+}
+
+/* Animación del reflejo tipo estrella recorriendo de esquina a esquina */
+@keyframes nr-star-sweep {
+  0% {
+    left: -60px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    left: calc(100% + 60px);
+    opacity: 0;
+  }
+}

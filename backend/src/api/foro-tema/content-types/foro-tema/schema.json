@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "foro_temas",
+  "info": {
+    "singularName": "foro-tema",
+    "pluralName": "foro-temas",
+    "displayName": "ForoTema",
+    "description": "Temas de discusión del ForoBiker"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true,
+      "maxLength": 200
+    },
+    "contenido": {
+      "type": "richtext",
+      "required": true
+    },
+    "categoria": {
+      "type": "enumeration",
+      "enum": [
+        "Las Motos y la Mecánica",
+        "Rutas, Eventos y Quedadas",
+        "Taller, Equipo y Consejos",
+        "La Vida Biker",
+        "Nuevos Miembros"
+      ],
+      "default": "La Vida Biker",
+      "required": true
+    },
+    "fijado": {
+      "type": "boolean",
+      "default": false
+    },
+    "cerrado": {
+      "type": "boolean",
+      "default": false
+    },
+    "autor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "respuestas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::foro-respuesta.foro-respuesta",
+      "mappedBy": "tema"
+    }
+  }
+}

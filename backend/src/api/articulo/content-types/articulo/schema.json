@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articulos",
+  "info": {
+    "singularName": "articulo",
+    "pluralName": "articulos",
+    "displayName": "Articulo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titulo"
+    },
+    "resumen": {
+      "type": "text"
+    },
+    "contenido": {
+      "type": "blocks"
+    },
+    "imagenDestacada": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "categoria": {
+      "type": "enumeration",
+      "enum": [
+        "equipo_de_proteccion",
+        "elegir_moto",
+        "conduccion",
+        "historia_de_las_marcas",
+        "mundo_biker",
+        "tipos_de_motos",
+        "tecnologia",
+        "tips_para_viajero",
+        "frases_de_motos",
+        "imagenes_de_motos",
+        "calendario_de_eventos",
+        "galeria",
+        "nosotros"
+      ]
+    }
+  }
+}
