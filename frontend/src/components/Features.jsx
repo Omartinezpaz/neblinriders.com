@@ -10,11 +10,11 @@ export default function Features() {
       </div>
       <div className="features-grid">
 
-        <div className="feature-card">
+        <Link to="/videos" className="feature-card" style={{ textDecoration: 'none', color: 'inherit' }}>
           <div className="feature-icon">🎥</div>
-          <h3>Videos de Bikers</h3>
+          <h3 style={{ color: 'var(--nr-ambar-primario)' }}>Videos de Bikers</h3>
           <p>Contenido de reviews, aventuras y circuitos.</p>
-        </div>
+        </Link>
         <Link to="/foro" className="feature-card" style={{ textDecoration: 'none', color: 'inherit' }}>
           <div className="feature-icon">👥</div>
           <h3 style={{ color: 'var(--nr-ambar-primario)' }}>ForoBiker / Red social</h3>
