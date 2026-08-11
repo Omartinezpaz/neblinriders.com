@@ -83,7 +83,12 @@ export default function Hero({ user, onRegisterClick }) {
               ¡Bienvenido, {user.apodo || user.nombre || user.username}!
             </div>
           ) : (
-            <Button onClick={onRegisterClick} variant="primary">Registrarme Gratis</Button>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
+              <Button onClick={onRegisterClick} variant="primary">Registrarme Gratis</Button>
+              <p style={{ margin: 0, fontSize: '1rem', fontWeight: '500', color: '#fff', textShadow: '0 2px 5px rgba(0,0,0,0.8)' }}>
+                para que tengas acceso a foro, videos, y otros servicios
+              </p>
+            </div>
           )}
         </div>
       </div>

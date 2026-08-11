@@ -35,7 +35,7 @@ export default function CTAEnjambre({ user, onOpenAuthModal, onOpenPerfilModal }
         }}>
           {user 
             ? `¡Bienvenido al Enjambre, ${user.apodo || user.nombre || user.username}! Mantén tu Ficha de Emergencia y datos Biker al día para tu protección en cada rodada.`
-            : 'Planes y Rodadas ¿Quieres conocer lugares y personas increíbles? ¡Únete al Enjambre!'
+            : '¿Quieres rodar con el enjambre?'
           }
         </p>
 
