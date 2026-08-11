@@ -86,7 +86,7 @@ export default function Hero({ user, onRegisterClick }) {
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
               <Button onClick={onRegisterClick} variant="primary">Registrarme Gratis</Button>
               <p style={{ margin: 0, fontSize: '1rem', fontWeight: '500', color: '#fff', textShadow: '0 2px 5px rgba(0,0,0,0.8)' }}>
-                Para que tengas acceso a Foros, Videos, GangaBiker y otros servicios
+                Para que tengas acceso a Noticias, ForoBiker, GangaBiker, VideoBiker, Enjambre y otros servicios
               </p>
             </div>
           )}
