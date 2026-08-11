@@ -20,7 +20,7 @@ export default function Hero({ user, onRegisterClick }) {
       try {
         const hoy = new Date().toISOString().split('T')[0];
         const url = `${API_URL}/api/publicidads?filters[ubicacion][$eq]=hero_slider&filters[fechaInicio][$lte]=${hoy}&filters[fechaFin][$gte]=${hoy}&populate=*`;
-        
+
         const response = await fetch(url);
         if (response.ok) {
           const { data } = await response.json();
@@ -86,7 +86,7 @@ export default function Hero({ user, onRegisterClick }) {
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
               <Button onClick={onRegisterClick} variant="primary">Registrarme Gratis</Button>
               <p style={{ margin: 0, fontSize: '1rem', fontWeight: '500', color: '#fff', textShadow: '0 2px 5px rgba(0,0,0,0.8)' }}>
-                para que tengas acceso a foro, videos, y otros servicios
+                Para que tengas acceso a Foros, Videos, GangaBiker y otros servicios
               </p>
             </div>
           )}
