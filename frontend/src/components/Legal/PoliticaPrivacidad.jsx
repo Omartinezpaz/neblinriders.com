@@ -1,4 +1,4 @@
-import React from 'react';
+
 import './PoliticaPrivacidad.css';
 
 export default function PoliticaPrivacidad() {
